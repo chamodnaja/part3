@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 export default function Profile({route}) {
-    const [selected,setSelected] = useState(2)
+    const [selected,setSelected] = useState(1)
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -16,7 +16,7 @@ export default function Profile({route}) {
                                 buttonSize={14}
                                 buttonInnerColor={'red'}
                                 buttonOuterColor={'blue'}
-                                
+                                onPress={()=>setSelected(1)}
                             />
                         </RadioButton>
                         <Text style={styles.textChoice}>12-18 ปี</Text>
@@ -28,7 +28,7 @@ export default function Profile({route}) {
                                 buttonSize={14}
                                 buttonInnerColor={'red'}
                                 buttonOuterColor={'blue'}
-                                
+                                onPress={()=>setSelected(2)}
                             />
                         </RadioButton>
                         <Text style={styles.textChoice}>มากกว่า 18 ปี</Text>
