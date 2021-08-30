@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
-export default function Profile({route}) {
+import { Badge, withTheme } from 'react-native-paper';
+function Evaluation(props) {
+    const { colors } = props.theme
     const [selected,setSelected] = useState(1)
     return (
         <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.textDesc}>คำชี้แจง: ทำแบบประเมินดังต่อไปนี้ให้ครบทุกข้อ</Text>
+            <View style={[styles.container,{ backgroundColor: colors.background }]}>
+                <Badge visible={true} size={40}>2</Badge>
+                <Text style={[styles.textDesc]}>คำชี้แจง: ทำแบบประเมินดังต่อไปนี้ให้ครบทุกข้อ</Text>
                 <Text style={styles.textQuestion}>1. อายุ</Text>
                 <RadioForm formHorizontal={false} >
                     <View style={styles.itemChoice}>
@@ -61,9 +64,9 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         paddingLeft: 8,
     },
 });
+export default withTheme(Evaluation)
