@@ -5,7 +5,8 @@ export default function Profile({route}) {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text>คำชี้แจง: ทำแบบประเมินดังต่อไปนี้ให้ครบทุกข้อ</Text>
+                <Text style={styles.textDesc}>คำชี้แจง: ทำแบบประเมินดังต่อไปนี้ให้ครบทุกข้อ</Text>
+                <Text style={styles.textQuestion}>1. อายุ</Text>
                 <RadioForm formHorizontal={false} >
                     <View style={styles.itemChoice}>
                         <RadioButton>
@@ -17,7 +18,19 @@ export default function Profile({route}) {
                                 
                             />
                         </RadioButton>
-                        <Text style={styles.textChoice}>ตัวเลือกที่ 1</Text>
+                        <Text style={styles.textChoice}>12-18 ปี</Text>
+                    </View>
+                    <View style={styles.itemChoice}>
+                        <RadioButton>
+                            <RadioButtonInput 
+                                isSelected={false}
+                                buttonSize={14}
+                                buttonInnerColor={'red'}
+                                buttonOuterColor={'blue'}
+                                
+                            />
+                        </RadioButton>
+                        <Text style={styles.textChoice}>มากกว่า 18 ปี</Text>
                     </View>
                 </RadioForm>
             </View>
@@ -26,6 +39,17 @@ export default function Profile({route}) {
 }
 
 const styles = StyleSheet.create({
+    textDesc:{
+        marginTop: 8,
+        marginBottom: 8,
+        fontSize: 16,
+        color: '#000',
+    },
+    textQuestion:{
+        fontSize: 16,
+        color: '#000',
+        marginBottom: 8
+    },
     textChoice:{
        marginLeft: 6 
     },
